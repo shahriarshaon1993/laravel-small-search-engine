@@ -29,7 +29,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::post('search', [UserSearchController::class, 'search'])->name('search');
-    Route::get('search-history', [UserSearchController::class, 'index'])->name('search-history');
+    Route::get('search-filter', [UserSearchController::class, 'index'])->name('search-filter');
+    Route::post('search-history', [UserSearchController::class, 'filter'])->name('search-history');
 });
 
 require __DIR__.'/auth.php';
