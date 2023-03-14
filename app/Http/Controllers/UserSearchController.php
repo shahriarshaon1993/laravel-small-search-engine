@@ -58,8 +58,7 @@ class UserSearchController extends Controller
 
     public function filter(Request $request)
     {
-        // Get the current date and time
-        $currentDate = Carbon::now();
+        // return $request->start_date;
 
         $userSearchHistories = UserSearchHistory::with('user');
 
@@ -85,12 +84,12 @@ class UserSearchController extends Controller
 
             $userSearchHistories->whereBetween('searched_at', [$lastMonth, $tillDate]);
         }
-        if ($request->has('start_date')) {
+        if ($request->start_date != '') {
             $startDate = Carbon::parse($request->input('start_date'));
 
             $userSearchHistories->whereDate('searched_at', '>=', $startDate);
         }
-        if ($request->has('end_date')) {
+        if ($request->end_date != '') {
             $endDate = Carbon::parse($request->input('end_date'));
 
             $userSearchHistories->whereDate('searched_at', '<=', $endDate);

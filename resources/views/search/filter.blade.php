@@ -77,6 +77,7 @@
                                 <input
                                     name="start_date"
                                     id="start_date"
+                                    value=""
                                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                     type="date" placeholder="Search">
                             </div>
@@ -86,6 +87,7 @@
                                 <input
                                     name="end_date"
                                     id="end_date"
+                                    value=""
                                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                     type="date" placeholder="Search">
                             </div>
